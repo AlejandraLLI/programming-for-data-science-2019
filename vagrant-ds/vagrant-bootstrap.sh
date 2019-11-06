@@ -25,3 +25,7 @@ pip install --upgrade pip
 
 # Jupyter and IPython
 pip install jupyter ipython
+
+# Install R base
+apt-get -y install r-base
+
