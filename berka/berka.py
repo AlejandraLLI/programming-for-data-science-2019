@@ -36,6 +36,9 @@ def berka(ctx):
 def create_schemas(ctx):
     query = ctx.obj['queries'].get('create_schemas')
     print(query)
+    conn = ctx.obj['conn']
+    with conn.cursor() as cur:
+        cur.execute(query)
 
 
 @berka.command()
@@ -43,6 +46,10 @@ def create_schemas(ctx):
 def create_raw_tables(ctx):
     query = ctx.obj['queries'].get('create_raw_tables')
     print(query)
+    conn = ctx.obj['conn']
+    with conn.cursor() as cur:
+        cur.execute(query)
+        
 
 @berka.command()
 @click.pass_context

@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
   # sharing folders
   config.vm.synced_folder ".", "/vagrant"
   config.vm.synced_folder "../data", "/data"
+  config.vm.synced_folder "../berka", "/berka"
   # config.vm.synced_folder "../../pds-2019", "/home/vagrant/pds-2019"
   config.vm.synced_folder "../../03_Tareas", "/home/vagrant/03_Tareas"
   config.vm.synced_folder "../turista", "/home/vagrant/turista"
@@ -28,3 +29,4 @@ Vagrant.configure("2") do |config|
 end
 
 
+Nota: hay funciones en Postgres que pueden tener código R, Python adentro. Si algo dentro de la limpieza ya es muy grande o repetitivo puedes convertir a una función. 
