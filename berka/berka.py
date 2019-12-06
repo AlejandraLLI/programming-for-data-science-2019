@@ -67,24 +67,34 @@ def load_berka(ctx):
                 buffer.write(data.read())
             buffer.seek(0)
             cursor.copy_expert(sql_statement, file=buffer)
+       
 
 @berka.command()
 @click.pass_context
-def to_cleaned():
+def to_cleaned(ctx):
     query = ctx.obj['queries'].get('to_cleaned')
     print(query)
+    conn = ctx.obj['conn']
+    with conn.cursor() as cur:
+        cur.execute(query)
 
 @berka.command()
 @click.pass_context
-def to_semantic():
+def to_semantic(ctx):
     query = ctx.obj['queries'].get('to_semantic')
     print(query)
+    conn = ctx.obj['conn']
+    with conn.cursor() as cur:
+        cur.execute(query)
 
 @berka.command()
 @click.pass_context
-def create_features():
+def create_features(ctx):
     query = ctx.obj['queries'].get('create_features')
     print(query)
+    conn = ctx.obj['conn']
+    with conn.cursor() as cur:
+        cur.execute(query)
 
 
 if __name__ == '__main__':
